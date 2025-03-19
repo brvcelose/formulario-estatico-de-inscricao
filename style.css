@@ -190,6 +190,10 @@ button {
     }
 
     .container {
+        min-width: 10rem;
+    }
+
+    .container {
         padding: 1rem;
         width: 100%;
         min-width: 35rem;
@@ -197,11 +201,16 @@ button {
 
     .aside-image {
         align-items: flex-start;
+
+
     }
 
     .image-trilhas {
         position: relative;
         top: 0;
+        min-width: 10rem !important;
+        max-width: 50rem !important;
+        height: 40rem !important;
     }
 
     .inline-group {
