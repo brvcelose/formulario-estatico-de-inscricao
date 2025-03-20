@@ -23,8 +23,8 @@ aside {
 }
 
 .container {
-    max-width: 65rem;
-    min-width: 65rem;
+    max-width: 70rem;
+    min-width: 70rem;
     margin: 0;
     background: white;
     padding: 2rem;
@@ -111,25 +111,52 @@ input, select, textarea {
 
 .radio-group {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: center;
     gap: 0.8rem;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .radio-group label {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    justify-content: space-around;
     font-weight: normal;
     min-width: 15rem;
-    max-width: 15rem;
+    width: 30%;
+    height: 10rem;
     border: 1px solid var(--primary);
-    border-radius: 4px;
-    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    padding: 0.5rem 3rem;
 }
 
 .radio-group input {
     width: 2rem;
+}
+
+.radio-group > label:has(input:checked) {
+    border: 2px solid var(--accent);
+}
+
+input:checked {
+    accent-color: var(--accent);
+}
+
+.trilha-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.trilha-icon-image {
+    width: 6rem;
+    margin-bottom: 1rem;
+    filter: brightness(0) invert(12%) sepia(71%) saturate(6562%) hue-rotate(195deg) brightness(80%) contrast(101%);
+}
+
+input:checked + .trilha-icon > .trilha-icon-image {
+    filter: brightness(0) invert(39%) sepia(96%) saturate(1476%) hue-rotate(2deg) brightness(104%) contrast(104%);
 }
 
 .terms {
@@ -137,6 +164,10 @@ input, select, textarea {
     margin: 2rem 0;
     gap: 0.5rem;
     justify-content: flex-start;
+}
+
+.terms a {
+    color: var(--accent);
 }
 
 .button-group {
@@ -159,28 +190,37 @@ button {
 }
 
 .btn-primary {
-    background: var(--primary);
+    background: var(--accent);
     color: white;
 }
 
 .btn-secondary {
     background: white;
-    border: 2px solid var(--primary);
-    color: var(--primary);
+    border: 2px solid var(--accent);
+    color: var(--accent);
 }
 
-.aside-image {
+.aside-images {
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
     width: 100%;
+    flex-direction: column;
+    margin-bottom: 2rem;
+    z-index: -1;
 }
 
 .image-trilhas {
-    height: 80vh;
+    width: 80vh;
     position: fixed;
     top: 5rem;
+}
+
+.logo-trilhas {
+    position: fixed;
+    bottom: 5rem;
+    width: 20rem;
 }
 
 @media (max-width: 1720px) {
@@ -199,10 +239,11 @@ button {
         min-width: 35rem;
     }
 
-    .aside-image {
-        align-items: flex-start;
-
-
+    .aside-images {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        margin-bottom: 2rem;
     }
 
     .image-trilhas {
@@ -211,6 +252,13 @@ button {
         min-width: 10rem !important;
         max-width: 50rem !important;
         height: 40rem !important;
+    }
+
+    .logo-trilhas {
+        position: relative;
+        bottom: 0;
+        right: calc(48vw - 50%);
+        width: 20rem;
     }
 
     .inline-group {
