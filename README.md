@@ -1,4 +1,7 @@
+
 # Formulário de Inscrição Digital – Programa de Formação em Tecnologia SECTI + FAPEMA
+
+Um sistema de inscrição moderno e responsivo desenvolvido para o Governo do Estado do Maranhão, com funcionalidades interativas e validação em tempo real.
 
 ---
 
@@ -10,24 +13,66 @@ Desenvolver a interface de inscrição para um programa de formação em tecnolo
 
 ---
 
-## Tecnologias Utilizadas  
-- **Front-end**: HTML5, CSS3 (Flexbox, Grid).  
-- **Versionamento**: Git + GitHub.  
-- **Validações**: HTML5 (campos obrigatórios, tipos específicos).  
+## 🚀 **Como Rodar Localmente**
+
+### **Pré-requisitos**
+- Navegador moderno (Chrome, Firefox ou Edge)
+- Git (opcional para clonar o repositório)
+
+### **Passo a Passo**
+1. **Clone o repositório**:
+   ```bash
+   git clone https://github.com/seu-usuario/programa-trilhas.git
+
+2. **Abra o projeto no VS Code**
+
+3. **Instale a extensão "Live Server" (Opcional para hot reload)**
+
+4. **Execute:**
+   - Abra main.html para o formulário de inscrição
+   - Abra login.html para a tela de login
+
+## 🛠️ Tecnologias Utilizadas 
+| Tecnologia       | Descrição                                  |
+|------------------|--------------------------------------------|
+| HTML5            | Estrutura semântica do formulário e componentes |
+| CSS3             | Estilização com variáveis, Flexbox, Grid e media queries |
+| JavaScript       | Validação de campos, localStorage e lógica de interação |
+| Git + GitHub     | Versionamento de códigos  |
 
 ---
 
 ## Principais Funcionalidades e Destaques  
 
-### ✅ Campos essenciais  
-- Dados pessoais, contato, endereço e documentos.  
-- Upload de arquivos (RG, comprovante de residência).  
-- Seleção de trilhas via *radio buttons*.  
+### ✅ Formulário Dinâmico
+- 4 seções organizadas:
+  - Dados pessoais
+  - Endereço residencial
+  - Escolha de trilhas de aprendizagem
+  - Criação de acesso (ID e senha)
 
-### ✅ Diferenciais técnicos  
-- Design responsivo para tablets.  
-- Semântica HTML para acessibilidade.  
-- Estilização de componentes complexos (upload personalizado, grupos de campos *inline*).  
+### ✅ Validação Inteligente
+- Campos obrigatórios destacados
+- Verificação de formato de e-mail
+- Senha com mínimo de 6 caracteres
+- Feedback visual de erros
+  
+### ✅ Modo Escuro Integrado
+- Alternância com botão 🌓
+- Persistência de preferência
+
+### ✅ Sistema de Login
+- Autenticação via localStorage
+- Redirecionamento automático após cadastro
+- Mensagens de erro contextualizadas
+
+### ✅ Responsividade Avançada
+- Layout adaptável para:
+  - Desktop (> 1720px)
+  - Tablets (768px - 1720px)
+  - Mobile (< 768px)
+- Grids flexíveis com auto-fit
+- Imagens otimizadas para diferentes resoluções
 
 ---
 
@@ -42,16 +87,6 @@ Desenvolver a interface de inscrição para um programa de formação em tecnolo
 - Replicar o design a partir do Figma.  
 - Garantir usabilidade em dispositivos de resolução menor.  
 - Organizar código para facilitar futuras integrações.  
-
----
-
-## Próximos Passos ou Evoluções  
-
-### 🚀 Melhorias planejadas  
-- Implementar **back-end** para armazenamento de dados.  
-- Adicionar validações em tempo real com JavaScript.  
-- Desenvolver painel administrativo para avaliadores.  
-- Integrar API de validação de CPF/CEP.  
 
 ---
 
