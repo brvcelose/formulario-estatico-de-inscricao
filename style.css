@@ -286,7 +286,6 @@ button {
         top: 0;
         min-width: 10rem !important;
         max-width: 50rem !important;
-        height: 40rem !important;
     }
 
     .logo-trilhas {
@@ -299,9 +298,35 @@ button {
     .inline-group {
         grid-template-columns: 1fr;
     }
+
+    .image-trilhas {
+        width: 100%;
+        height: auto;
+    }
+
+    .logo-trilhas {
+        width: 80%;
+    }
+
+    .login-ctn {
+        width: 100%;
+        min-width: unset !important;
+    }
 }
 
 @media (max-width: 768px) {
+    body {
+        width: 100%;
+        padding: 0.5rem;
+    }
+
+    .header {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        height: 100%;
+    }
+
     .inline-group {
         grid-template-columns: 1fr;
     }
