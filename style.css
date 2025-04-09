@@ -265,13 +265,9 @@ button {
     }
 
     .container {
-        min-width: 10rem;
-    }
-
-    .container {
         padding: 1rem;
         width: 100%;
-        min-width: 35rem;
+        min-width: unset !important;
     }
 
     .aside-images {
@@ -284,7 +280,6 @@ button {
     .image-trilhas {
         position: relative;
         top: 0;
-        min-width: 10rem !important;
         max-width: 50rem !important;
     }
 
@@ -306,11 +301,6 @@ button {
 
     .logo-trilhas {
         width: 80%;
-    }
-
-    .login-ctn {
-        width: 100%;
-        min-width: unset !important;
     }
 }
 
@@ -338,6 +328,7 @@ button {
 
     .container {
         padding: 1rem;
-        min-width: unset;
+        min-width: unset !important;
+        width: 100%;
     }
 }
