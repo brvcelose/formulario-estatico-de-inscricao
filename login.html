@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Login - Programa Trilhas</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="main.js"></script>
+</head>
+<body>
+<button class="dark-mode-toggle" onclick="toggleDarkMode()"><img src="assets/circle-half-stroke-solid.svg" class="dark-mode-icon"></button>
+<section class="container">
+  <div class="header">
+    <h1>Login</h1>
+  </div>
+  <form id="loginForm">
+    <div class="form-group">
+      <label class="required">ID do usuário</label>
+      <input type="text" id="loginUserID" required>
+    </div>
+    <div class="form-group">
+      <label class="required">Senha</label>
+      <input type="password" id="loginPassword" required>
+    </div>
+    <div class="button-group">
+      <a href="main.html" class="btn-secondary">Criar conta</a>
+      <button type="submit" class="btn-primary">Entrar</button>
+    </div>
+  </form>
+</section>
+
+<script>
+  document.getElementById('loginForm').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const savedData = JSON.parse(localStorage.getItem('formData'));
+    const inputUserID = document.getElementById('loginUserID').value;
+    const inputPassword = document.getElementById('loginPassword').value;
+
+    if (savedData && inputUserID === savedData.userID && inputPassword === savedData.userPassword) {
+      window.location.href = 'main.html'; // Redireciona de volta
+    } else {
+      alert('ID ou senha incorretos!');
+    }
+  });
+</script>
+<aside>
+  <div class="aside-images">
+    <img class="image-trilhas" src="./assets/Ilustration.svg" alt="Ilustração do Programa Trilhas">
+    <img class="logo-trilhas" src="./assets/Logo.svg" alt="Logo do Programa Trilhas">
+  </div>
+</aside>
+</body>
+</html>

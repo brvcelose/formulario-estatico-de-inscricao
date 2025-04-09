@@ -3,6 +3,28 @@
     --secondary: #F5F5F5;
     --accent: #FF6B00;
     --text: #333333;
+    --bg-primary: #FFFFFF;
+    --bg-secondary: #004A80;
+}
+
+.dark-mode {
+    --primary: #1A1A1A;
+    --secondary: #2D2D2D;
+    --text: #FFFFFF;
+    --bg-primary: #2D2D2D;
+    --bg-secondary: #1A1A1A;
+}
+
+.dark-mode-toggle {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    background: white;
+    border: none;
+    border-radius: 50%;
+    padding: 0.8rem;
+    cursor: pointer;
+    z-index: 1000;
 }
 
 * {
@@ -14,8 +36,9 @@
 
 body {
     display: flex;
-    background: var(--primary);
+    background: var(--bg-secondary);
     padding: 2rem;
+    color: var(--text);
 }
 
 aside {
@@ -26,7 +49,7 @@ aside {
     max-width: 70rem;
     min-width: 70rem;
     margin: 0;
-    background: white;
+    background: var(--bg-primary);
     padding: 2rem;
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
@@ -41,13 +64,18 @@ aside {
     position: absolute;
     top: 0;
     left: 0;
-    color: var(--primary);
+    color: var(--text);
     text-decoration: none;
     font-weight: bold;
 }
 
+.dark-mode-icon {
+    height: 1.5rem;
+    width: 1.5rem;
+}
+
 h1 {
-    color: var(--primary);
+    color: var(--text);
     text-align: center;
     margin: 1rem 0;
     font-size: 1.8rem;
@@ -198,6 +226,13 @@ button {
     background: white;
     border: 2px solid var(--accent);
     color: var(--accent);
+    padding: 0.8rem 2rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: opacity 0.3s;
+    font-size: 13.3px;
+    text-decoration: none;
 }
 
 .aside-images {
@@ -263,5 +298,21 @@ button {
 
     .inline-group {
         grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .inline-group {
+        grid-template-columns: 1fr;
+    }
+
+    .radio-group label {
+        width: 100%;
+        min-width: unset;
+    }
+
+    .container {
+        padding: 1rem;
+        min-width: unset;
     }
 }
