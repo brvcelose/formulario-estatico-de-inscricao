@@ -1,27 +1,42 @@
 document.addEventListener('DOMContentLoaded', () => {
     const form = document.querySelector('form');
-    const inputs = document.querySelectorAll('input, select');
+    const userIDInput = document.getElementById('userID'); // Campo ID
+    const userPasswordInput = document.getElementById('userPassword'); // Campo Senha
 
-    // Validação em tempo real
-    inputs.forEach(input => {
-        input.addEventListener('blur', validateField);
-    });
+    // Carregar dados salvos (se existirem)
+    const savedData = JSON.parse(localStorage.getItem('formData'));
+    if (savedData) {
+        userIDInput.value = savedData.userID || '';
+        userPasswordInput.value = savedData.userPassword || '';
+    }
 
-    // Validação do formulário
+    // Evento de submit do formulário
     form.addEventListener('submit', (e) => {
-        e.preventDefault();
+        e.preventDefault(); // Impede envio padrão
+
+        // Validação básica
         let isValid = true;
 
-        inputs.forEach(input => {
-            if (!validateField(input)) isValid = false;
-        });
-
-        if (isValid) {
-            saveFormData();
-            alert('Inscrição realizada com sucesso!');
-            window.location.href = 'login.html';
+        // Valida ID e Senha
+        if (!userIDInput.value.trim()) {
+            alert('ID do usuário é obrigatório!');
+            isValid = false;
         }
-        return false;
+
+        if (!userPasswordInput.value.trim() || userPasswordInput.value.length < 6) {
+            alert('Senha deve ter no mínimo 6 caracteres!');
+            isValid = false;
+        }
+
+        // Se válido, salva e redireciona
+        if (isValid) {
+            localStorage.setItem('formData', JSON.stringify({
+                userID: userIDInput.value,
+                userPassword: userPasswordInput.value
+            }));
+            alert('Inscrição realizada com sucesso!');
+            window.location.href = 'login.html'; // Redireciona
+        }
     });
 
     // Função de validação
@@ -53,26 +68,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         return true;
-    }
-
-    // Armazenamento temporário
-    function saveFormData() {
-        // Captura APENAS os campos de ID e Senha
-        const userID = document.getElementById('userID').value;
-        const userPassword = document.getElementById('userPassword').value;
-
-        // Salva APENAS esses dados
-        localStorage.setItem('formData', JSON.stringify({
-            userID: userID,
-            userPassword: userPassword
-        }));
-    }
-
-    // Carregar dados salvos
-    const savedData = JSON.parse(localStorage.getItem('formData'));
-    if (savedData) {
-        document.getElementById('userID').value = savedData.userID || '';
-        document.getElementById('userPassword').value = savedData.userPassword || '';
     }
 
     // Carregar estado do modo escuro ao iniciar

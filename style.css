@@ -265,13 +265,9 @@ button {
     }
 
     .container {
-        min-width: 10rem;
-    }
-
-    .container {
         padding: 1rem;
         width: 100%;
-        min-width: 35rem;
+        min-width: unset !important;
     }
 
     .aside-images {
@@ -284,9 +280,7 @@ button {
     .image-trilhas {
         position: relative;
         top: 0;
-        min-width: 10rem !important;
         max-width: 50rem !important;
-        height: 40rem !important;
     }
 
     .logo-trilhas {
@@ -299,9 +293,30 @@ button {
     .inline-group {
         grid-template-columns: 1fr;
     }
+
+    .image-trilhas {
+        width: 100%;
+        height: auto;
+    }
+
+    .logo-trilhas {
+        width: 80%;
+    }
 }
 
 @media (max-width: 768px) {
+    body {
+        width: 100%;
+        padding: 0.5rem;
+    }
+
+    .header {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        height: 100%;
+    }
+
     .inline-group {
         grid-template-columns: 1fr;
     }
@@ -313,6 +328,7 @@ button {
 
     .container {
         padding: 1rem;
-        min-width: unset;
+        min-width: unset !important;
+        width: 100%;
     }
 }
